@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    scroll-behavior: smooth;
+}
+
+.super-link {
+    @apply cursor-pointer inline-block;
+    position: relative;
+    transition: all 0.2s ease;
+}
+.super-link::before {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -2%;
+    bottom: 10%;
+    left: -2%;
+    background-color: #647eff;
+    opacity: 0.3;
+    transition: all 0.2s ease;
+}
+.super-link:hover::before {
+    top: 83%;
+    opacity: 1;
+    right: 0;
+    left: 0;
+}
+
+.name {
+    z-index: 0;
+    background-image: -webkit-linear-gradient(315deg, #f2973b 25%, #fef1b4);
+    background-clip: text;
+    position: relative;
+    -webkit-text-fill-color: transparent;
+}
+.name::before {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    top: 60%;
+    right: 0;
+    bottom: 10%;
+    left: 0;
+    background-image: -webkit-linear-gradient(315deg, #b42392 25%, #647eff);
+    opacity: 0.5;
+    transition: all 0.5s ease;
+}
+.name:hover::before {
+    top: 83%;
+    opacity: 1;
+}
+
+@layer base {
+    /* Default */
+    :root {
+
+        --color-text-main: 23 23 23;
+        --color-bg-main: 242 241 236;
+        --color-bg-muted: 234 233 225;
+        --color-border-main: 23 23 23;
+    }
+    html.dark {
+        --color-text-main: 242 241 236;
+        --color-bg-main: 23 23 23;
+        --color-bg-muted: 36 36 36;
+        --color-border-main: 242 241 236;
+    }
+
+    /* Cyan */
+    /*
+    :root {
+        --color-text-main: 22 42 43;
+        --color-bg-main: 214 224 226;
+        --color-bg-muted: 204 216 219;
+        --color-border-main: 22 42 43;
+    }
+    html.dark {
+        --color-text-main: 214 224 226;
+        --color-bg-main: 22 42 43;
+        --color-bg-muted: 28 53 55;
+        --color-border-main: 214 224 226;
+    }
+    */
+    /* Green */
+    /*
+    :root {
+        --color-text-main: 58 66 56;
+        --color-bg-main: 243 239 230;
+        --color-bg-muted: 238 233 220;
+        --color-border-main: 58 66 56;
+    }
+    html.dark {
+        --color-text-main: 243 239 230;
+        --color-bg-main: 94 108 91;
+        --color-bg-muted: 89 103 86;
+        --color-border-main: 243 239 230;
+    }
+    */
+}

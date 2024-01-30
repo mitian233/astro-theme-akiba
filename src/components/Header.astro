@@ -1,0 +1,39 @@
+---
+import siteConfig from '../data/site-config';
+import {marked} from 'marked';
+---
+
+<header class="w-full max-w-3xl mx-auto mb-12 sm:mb-16">
+    {
+        siteConfig.logo && siteConfig.logo?.src ? (
+                <a href="/">
+                    <img src={siteConfig.logo.src} alt={siteConfig.logo.alt || ''} class="max-h-12"/>
+                </a>
+        ) : (
+                <div class={siteConfig.avatar && siteConfig.avatar?.src && 'flex flex-col md:flex-row-reverse md:justify-between md:items-center'}>
+                    {siteConfig.avatar && siteConfig.avatar?.src && (
+                            <div class="rounded-full w-[10em] mb-5 overflow-hidden">
+                                <img src={siteConfig.avatar.src} alt={siteConfig.avatar.alt}/>
+                            </div>)
+                    }
+                    <div>
+                        <div class="font-serif text-2xl leading-tight font-medium text-theme-foreground sm:text-4xl flex flex-row items-center gap-1">
+                            <a href="/">
+                                <p set:html={marked.parse(siteConfig.heroTitle)}/>
+                            </a>
+                            <a href="/rss.xml">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="lucide lucide-rss">
+                                    <path d="M4 11a9 9 0 0 1 9 9"/>
+                                    <path d="M4 4a16 16 0 0 1 16 16"/>
+                                    <circle cx="5" cy="19" r="1"/>
+                                </svg>
+                            </a>
+                        </div>
+                        {siteConfig.subtitle && <p class="text-sm leading-tight mt-1">{siteConfig.subtitle}</p>}
+                    </div>
+                </div>
+        )
+    }
+</header>

@@ -1,0 +1,27 @@
+---
+import siteConfig from '../data/site-config';
+const gc = siteConfig.giscusConfig;
+---
+
+{
+    siteConfig.giscusConfig && (
+        <script
+            is:inline
+            src="https://giscus.app/client.js"
+            data-repo={gc.dataRepo}
+            data-repo-id={gc.dataRepoId}
+            data-category={gc.dataCategory}
+            data-category-id={gc.dataCategoryId}
+            data-mapping={gc.Mapping}
+            data-strict={gc.Strict}
+            data-reactions-enabled={gc.dataReactionsEnabled}
+            data-emit-metadata={gc.dataEmitMetadata}
+            data-input-position={gc.dataInputPosition}
+            data-theme={gc.dataTheme}
+            data-lang={gc.dataLang}
+            data-loading={gc.dataLoading}
+            crossorigin="anonymous"
+            async
+        />
+    )
+}

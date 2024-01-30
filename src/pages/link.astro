@@ -1,0 +1,9 @@
+---
+import Links from '../components/links.vue';
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="友情链接" showHeader={false}>
+    <h1 class="mb-12 text-2xl font-serif italic sm:mb-16 sm:text-4xl">友情链接</h1>
+    <Links client:load />
+</BaseLayout>

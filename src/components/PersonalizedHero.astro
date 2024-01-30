@@ -1,0 +1,52 @@
+---
+import siteConfig from '../data/site-config';
+---
+
+
+<section class="w-full flex flex-col gap-8 mb-16 sm:mb-24">
+    <div class="hero hero__bg">
+        <div class="hero__content h-[40vh] flex flex-col justify-center items-center">
+            <div id="hitokoto" class="text-xl px-3"/>
+        </div>
+    </div>
+</section>
+
+<style>
+    .hero__bg {
+        position: relative;
+    }
+
+    .hero__bg::before {
+        z-index: -1;
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-image: url('/welcome-cover.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0.5;
+    }
+</style>
+
+<script>
+    import axios from 'axios';
+    import typedjs from 'typed.js';
+
+    const fetchHitokoto = () => {
+        axios.get('https://v1.hitokoto.cn/').then((res) => {
+            const hitokotoRes = JSON.parse(JSON.stringify(res.data));
+            const options = {
+                strings: [hitokotoRes.hitokoto, '出自 ' + hitokotoRes.from],
+                typeSpeed: 50,
+                startDelay: 300,
+                loop: true,
+                showCursor: false
+            };
+            const typed = new typedjs('#hitokoto', options);
+            typed.start();
+        });
+    };
+    fetchHitokoto();
+</script>
