@@ -57,6 +57,9 @@ module.exports = {
                             fontFamily: theme('fontFamily.sans'),
                             fontWeight: 500
                         },
+                        'img': {
+                            margin: 'auto',
+                        },
                         blockquote: {
                             border: 0,
                             fontFamily: theme('fontFamily.serif'),
