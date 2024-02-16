@@ -6,6 +6,10 @@ html {
     scroll-behavior: smooth;
 }
 
+body{
+    @apply ease-in-out duration-200;
+}
+
 .super-link {
     @apply cursor-pointer inline-block;
     position: relative;
