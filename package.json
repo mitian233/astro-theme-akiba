@@ -11,12 +11,12 @@
         "astro": "astro"
     },
     "dependencies": {
-        "@astrojs/mdx": "^2.0.5",
-        "@astrojs/rss": "^3.0.0",
-        "@astrojs/sitemap": "^3.0.5",
+        "@astrojs/mdx": "^2.2.1",
+        "@astrojs/rss": "^4.0.5",
+        "@astrojs/sitemap": "^3.1.1",
         "@astrojs/tailwind": "^5.1.0",
-        "@astrojs/vue": "^4.0.8",
-        "astro": "^4.2.1",
+        "@astrojs/vue": "^4.0.9",
+        "astro": "^4.5.9",
         "axios": "^1.6.6",
         "marked": "^9.1.5",
         "rehype-katex": "^7.0.0",
