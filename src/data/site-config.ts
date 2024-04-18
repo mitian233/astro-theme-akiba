@@ -1,3 +1,13 @@
+import type {
+    AvailableLanguage,
+    BooleanString,
+    InputPosition,
+    Loading,
+    Mapping,
+    Repo,
+    Theme,
+} from '@giscus/vue';
+
 export type Image = {
     src: string;
     alt?: string;
@@ -23,18 +33,19 @@ export type Subscribe = {
 };
 
 export type GiscusConfig = {
-    dataRepo: string;
+    dataRepo: Repo;
     dataRepoId: string;
     dataCategory: string;
     dataCategoryId: string;
-    dataMapping: string;
-    dataStrict: string;
-    dataReactionsEnabled: string;
-    dataEmitMetadata: string;
-    dataInputPosition: string;
-    dataTheme: string;
-    dataLang: string;
-    dataLoading: string;
+    dataMapping: Mapping;
+    dataStrict: BooleanString;
+    dataReactionsEnabled?: BooleanString;
+    dataEmitMetadata?: BooleanString;
+    dataInputPosition: InputPosition;
+    dataTheme: Theme;
+    dataThemeDark: Theme;
+    dataLang: AvailableLanguage;
+    dataLoading: Loading;
 }
 
 export type SiteConfig = {
@@ -162,9 +173,10 @@ const siteConfig: SiteConfig = {
     //     dataEmitMetadata: "0",
     //     dataInputPosition: "bottom",
     //     dataTheme: "preferred_color_scheme",
+    //     dataThemeDark: "preferred_color_scheme",
     //     dataLang: "zh-CN",
     //     dataLoading: "lazy"
-    // }
+    // },
 };
 
 export default siteConfig;
