@@ -51,7 +51,7 @@ export default defineConfig({
       rehypeStringify,
       rehypeGraphviz
     ],
-    syntaxHighlight: false,
+    // syntaxHighlight: false,
   },
   output: 'static'
 

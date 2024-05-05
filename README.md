@@ -14,6 +14,8 @@
 
 - ✅ 改进的中文支持
 - ✅ 支持使用 KaTeX 渲染数学公式
+- ✅ Graphviz*
+- ✅ Mermaid* (非默认开启: 需要在 `astro.config.mjs` 手动取消注释)(初次使用需要先运行 `npx playwright install`)
 - ✅ 支持中文文章标签
 - ✅ 全站过渡动画
 - ✅ 暗色模式
@@ -29,6 +31,8 @@
 - ✅ 高度个性化的主题配置
 - ✅ 支持自定义页面
 - ✅ Vue 3 自定义组件
+
+*目前 Graphviz 和 Mermaid 和语法高亮冲突，需要在 `astro.config.mjs` 添加 `syntaxHighlight: false` （已注释）关闭语法高亮才可正常渲染。
 
 ## 模板集成
 
