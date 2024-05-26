@@ -1,6 +1,6 @@
 # Akiba - 一个简单的 Astro 博客主题
 
-该主题由 [Date](https://github.com/JustGoodUI/dante-astro-theme) 修改而来，感谢原作者的开源。这是一款单作者的博客主题，使用 [Astro.js](https://astro.build/) 构建，使用 [Tailwind CSS](https://tailwindcss.com/) 作为样式框架。增加了主题对中文的支持，以及一些其他的功能。
+该主题由 [Date](https://github.com/JustGoodUI/dante-astro-theme) 修改而来，感谢原作者的开源。这是一款单作者的博客主题，使用 [Astro.js](https://astro.build/) 构建，使用 [Tailwind CSS](https://tailwindcss.com/) 作为样式框架。增加了主题对中文的支持，以及一些其他的功能。如果你喜欢，或是正在使用这个项目，可以为我点一个免费的 🌟Star 嘛~谢谢你啦(/////)
 
 ## 快速上手
 
