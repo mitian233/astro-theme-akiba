@@ -1,12 +1,13 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+@import 'tailwindcss/preflight' layer(base);
+@import 'tailwindcss/utilities' layer(utilities);
+@config '../../tailwind.config.cjs';
 
 html {
     scroll-behavior: smooth;
 }
 
-body{
+body {
     @apply ease-in-out duration-200;
 }
 
@@ -58,10 +59,56 @@ body{
     opacity: 1;
 }
 
+@media (max-width: 767px) {
+    .menu {
+        @apply flex-col gap-1 absolute -top-2.5 -left-2.5 max-w-64 px-3 pt-16 pb-10 z-20 bg-main border-t-2 border-l-2 border-b-4 border-r-4 border-main invisible opacity-0;
+        transform: translateY(-10%);
+        width: calc(100% + 1.25rem);
+    }
+    .menu.is-visible {
+        @apply visible opacity-100;
+        transform: translateY(0);
+        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+    }
+    .menu-toggle-icon {
+        transition: width 0.1s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+    }
+    .menu-toggle.is-active .menu-toggle-icon {
+        @apply w-0;
+        transition: width 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .menu-toggle-icon:before,
+    .menu-toggle-icon:after {
+        @apply w-6 h-px absolute left-1/2 top-0 origin-center -translate-x-1/2 bg-current;
+        content: '';
+        transition:
+            transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+            margin 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+    }
+    .menu-toggle-icon:before {
+        @apply -mt-1.5;
+    }
+    .menu-toggle-icon:after {
+        @apply mt-1.5;
+    }
+    .menu-toggle.is-active .menu-toggle-icon:before,
+    .menu-toggle.is-active .menu-toggle-icon:after {
+        @apply mt-0;
+        transition:
+            margin 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0.1s,
+            transform 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+    }
+    .menu-toggle.is-active .menu-toggle-icon:before {
+        @apply rotate-45;
+    }
+    .menu-toggle.is-active .menu-toggle-icon:after {
+        @apply -rotate-45;
+    }
+}
+
 @layer base {
     /* Default */
     :root {
-
         --color-text-main: 23 23 23;
         --color-bg-main: 242 241 236;
         --color-bg-muted: 234 233 225;
