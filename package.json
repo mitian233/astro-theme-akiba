@@ -3,6 +3,7 @@
     "type": "module",
     "version": "0.0.1",
     "scripts": {
+        "preinstall": "npx only-allow pnpm",
         "new": "node ./scripts/generate_new_post.js",
         "dev": "astro dev",
         "start": "astro dev",
@@ -11,13 +12,13 @@
         "astro": "astro"
     },
     "dependencies": {
-        "@astrojs/mdx": "^4.1.0",
-        "@astrojs/rss": "^4.0.11",
-        "@astrojs/sitemap": "^3.2.1",
-        "@astrojs/vue": "^5.0.7",
+        "@astrojs/mdx": "^4.3.9",
+        "@astrojs/rss": "^4.0.13",
+        "@astrojs/sitemap": "^3.6.0",
+        "@astrojs/vue": "^5.1.2",
         "@giscus/vue": "^3.0.0",
         "@tailwindcss/vite": "^4.0.9",
-        "astro": "^5.4.0",
+        "astro": "^5.15.2",
         "astro-diagram": "^0.7.0",
         "astro-robots-txt": "^1.0.0",
         "axios": "^1.6.6",
