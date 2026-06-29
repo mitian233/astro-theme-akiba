@@ -20,6 +20,16 @@ const { showHeader = true, ...head } = Astro.props;
             }
         </script>
         <ClientRouter />
+        <script>
+            import mermaid from 'mermaid';
+
+            const renderMermaidDiagrams = () => {
+                mermaid.initialize({ startOnLoad: false, theme: document.documentElement.classList.contains('dark') ? 'dark' : 'default' });
+                mermaid.run({ querySelector: '.mermaid' });
+            };
+
+            document.addEventListener('astro:page-load', renderMermaidDiagrams);
+        </script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/FutabaTsukushi/PingFang_SC_webfont_splited/PingFang_SC_Medium/result.css" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/FutabaTsukushi/PingFang_SC_webfont_splited/PingFang_SC_Bold/result.css" />
     </head>
