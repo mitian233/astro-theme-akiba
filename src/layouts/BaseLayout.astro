@@ -15,11 +15,15 @@ const { showHeader = true, ...head } = Astro.props;
     <head>
         <BaseHead {...head} />
         <script>
-            if (localStorage.theme === 'dark') {
-                document.documentElement.classList.add('dark');
-            }
+            const applyTheme = () => {
+                const theme = localStorage.getItem('theme') ?? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                document.documentElement.classList.toggle('dark', theme === 'dark');
+            };
+
+            applyTheme();
+            document.addEventListener('astro:after-swap', applyTheme);
         </script>
-        <ClientRouter />
+        <ClientRouter fallback="animate" />
         <script>
             import mermaid from 'mermaid';
 
