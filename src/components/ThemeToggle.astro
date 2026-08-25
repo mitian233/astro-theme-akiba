@@ -60,11 +60,3 @@ import siteConfig from '../data/site-config';
         setTheme(initialTheme);
     });
 </script>
-
-<script>
-    document.addEventListener('astro:after-swap', () => {
-        if (localStorage.getItem('theme') === 'dark') {
-            document.documentElement.classList.add('dark');
-        }
-    });
-</script>
